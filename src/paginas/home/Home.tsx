@@ -1,16 +1,19 @@
-import React from 'react'
-import './Home.css';
+import React, { useState } from 'react';
 
-export const Home = () => {
+function Home() {
+  const [loggedIn, setLoggedIn] = useState(false);
+
   return (
-    <>
-    <h1 className='titulo'> Home</h1>
-    </>
-  )
+    <div>
+      {loggedIn ? (
+        <h1>Bem-vindo de volta!</h1>
+      ) : (
+        <button onClick={() => setLoggedIn(true)}>Entrar</button>
+      )}
+    </div>
+  );
 }
-
 export default Home;
-
 
 
 
