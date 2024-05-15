@@ -1,37 +1,32 @@
+import React from 'react';
 import './App.css';
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+
+import Navbar from './components/navbar/Navbar';
+import Footer from './components/footer/Footer';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Login from './paginas/login/Login';
+import Cadastro from './paginas/cadastro/Cadastro';
 import Home from './paginas/home/Home';
 
-interface User {
-  id: number;
-  name: string;
-}
 
 function App() {
-
-  const [users, setUsers] = useState<User[]>([]);
-
-  useEffect(() => {
-    axios.get<User[]>('https://jsonplaceholder.typicode.com/users')
-      .then(response => {
-        setUsers(response.data);
-      })
-      .catch(error => {
-        console.log(error);
-      });
-  }, []);
-
   return (
-    <div>
-      <h1>Lista de usuários</h1>
-      <ul>
-        {users.map(user => (
-          <li key={user.id}>{user.name}</li>
-        ))}
-      </ul>
-    </div>
+    <>
+   
+        <BrowserRouter>
+          <Navbar />
+          <div className='min-h-[80vh]'>
+            <Routes>
+              <Route path="/" element={<Cadastro />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/cadastro" element={<Cadastro />} />
+              <Route path="/home" element={<Home />} />
+            </Routes>
+          </div>
+          <Footer />
+        </BrowserRouter>
+  
+    </>
   );
 }
-
 export default App;
