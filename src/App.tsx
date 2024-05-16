@@ -3,12 +3,12 @@ import reactLogo from './assets/react.svg';
 import viteLogo from '/vite.svg';
 import './App.css';
 import 'react-toastify/dist/ReactToastify.css';
-import Login from './paginas/login/Login';
+import Login from './paginas/Login/Login';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { AuthProvider } from './contexts/AuthContext';
 import { ToastContainer } from 'react-toastify';
 import Cadastro from './paginas/cadastro/Cadastro';
-import Navbar from './components/navbar/Navbar';
+import Navbar from './components/navBar/Navbar';
 import Home from './paginas/home/Home';
 import Footer from './components/footer/Footer';
 import ListaTemas from './components/temas/listaTemas/ListaTemas';
@@ -17,8 +17,11 @@ import DeletarTema from './components/temas/deletarTema/DeletarTema';
 import ListaPostagens from './components/postagens/listaPostagens/ListaPostagens';
 import FormularioPostagem from './components/postagens/formularioPostagem/FormularioPostagem';
 
-import Perfil from './pages/perfil/Perfil';
-import DeletarPostagem from './components/postagens/deletarPostagem/deletarPostagem';
+import Perfil from './paginas/perfil/Perfil';
+import DeletarPostagem from './components/postagens/deletarPostagem/DeletarPostagem';
+
+import "./App.css";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   
